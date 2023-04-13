@@ -1,0 +1,3 @@
+Built-By: allen bai
+Main-Class: Demo
+Class-Path: ./libs/hello.jar
