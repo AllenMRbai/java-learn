@@ -8,10 +8,9 @@
 - javac 的 `-d <path>` 参数能将编译结果输出到目标目录下，同时会将 class 文件放置到 package 对应的目录路径下
 
 ```shell
-
 # 进入src目录
 $ cd javac-package-pra/src
-# 编译，并且将结果输出到out目录下
+# 编译，并且将结果输出到out目录下（ps： 先输出out目录，然后再执行下面的编译脚本）
 $ javac -d ../out  *.java
 # 进入out目录
 $ cd ../out
