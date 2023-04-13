@@ -6,6 +6,7 @@ $ cd javac-jar/simple-jar
 # 编译
 $ javac Hello.java
 # 打jar包
+# 注：c表示要创建一个新的jar包，v表示创建的过程中在控制台输出创建过程的一些信息，f表示给生成的jar包命名
 $ jar -cvf hello.jar Hello.class
 # 运行jar包
 $ java -jar hello.jar
