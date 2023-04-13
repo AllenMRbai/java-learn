@@ -49,3 +49,10 @@ $ jar -cvfm demo.jar manifest.txt Demo.class
 # 因为jar包META-INF/MANIFEST.MF文件内配置了 Class-path ，所以我们执行java 命令时不再需要 -cp。
 $ java -jar demo.jar
 ```
+
+## 参考
+
+- https://www.cnblogs.com/mq0036/p/8566427.html#a11
+- https://blog.51cto.com/mouday/5055807
+- https://www.baeldung.com/java-jar-manifest
+- https://blog.csdn.net/gao_zhennan/article/details/112749742
