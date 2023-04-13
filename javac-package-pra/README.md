@@ -17,3 +17,8 @@ $ cd ../out
 # 执行
 $ java Main
 ```
+
+## 参考
+
+- https://www.runoob.com/java/java-package.html
+- https://www.runoob.com/w3cnote/java-compile-with-package.html
