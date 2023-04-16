@@ -37,5 +37,11 @@
       <!-- 当前依赖的范围，下面是指在test下面生效 -->
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.0.0.RELEASE</version>
+    </dependency>
   </dependencies>
 </project>

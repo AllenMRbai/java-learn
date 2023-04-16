@@ -39,7 +39,16 @@
         <groupId>com.allen.bai.maven</groupId>
         <artifactId>maven-java</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <!-- compile 会把依赖jar包放到项目打的war包内 -->
         <scope>compile</scope>
+        <!-- 配置要排除的依赖 -->
+        <exclusions>
+          <exclusion>
+            <!-- 配置要排除依赖的具体坐标，不需要version -->
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
     </dependency>
   </dependencies>
 </project>
