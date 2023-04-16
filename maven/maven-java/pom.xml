@@ -1,24 +1,40 @@
+<!-- POM is short for Project Object Model -->
+<!-- 根标签：project，表示对当前工程进行配置、管理 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- 从 Maven 2 开始就是固定是 4.0.0 -->
+  <!-- 代表当前 pom.xml 所采用的标签结构 -->
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- 坐标： 代表公司或组织开发的某一个项目 -->
   <groupId>com.allen.bai.maven</groupId>
+  <!-- 坐标：代表项目下的某一模块 -->
   <artifactId>maven-java</artifactId>
+  <!-- 版本号 -->
   <version>1.0-SNAPSHOT</version>
+  <!-- 项目打包方式 -->
+  <!-- 取值 jar: 生成 jar 包 -->
+  <!-- 取值 war: 生成 war 包 -->
+  <!-- 取值 pom: 说明这个工程是用来管理其他工程的工程，例如聚合工程的父工程 -->
   <packaging>jar</packaging>
 
   <name>maven-java</name>
   <url>http://maven.apache.org</url>
 
+  <!-- 在 Maven 中定义属性值 -->
   <properties>
+    <!-- 子构建过程中读取源码时使用的字符集 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <!-- 配置依赖，可配置多个依赖 -->
   <dependencies>
+    <!-- 配置一个具体的依赖 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
+      <!-- 当前依赖的范围，下面是指在test下面生效 -->
       <scope>test</scope>
     </dependency>
   </dependencies>
