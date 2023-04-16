@@ -1,0 +1,3 @@
+Built-By: allen bai
+Main-Class: Main
+Class-Path: ./libs/special-say.jar ../use-other-jar/libs/hello.jar 
