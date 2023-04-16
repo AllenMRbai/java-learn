@@ -15,5 +15,7 @@ public class CalculatorTest {
     int result = c.sum(1, 2);
 
     assertEquals(3, result);
+
+    System.out.println("测试了一下 哈哈哈 test have been called");
   }
 }
