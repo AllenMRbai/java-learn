@@ -9,7 +9,7 @@
 
 ```shell
 # 进入src目录
-$ cd javac-package-pra/src
+$ cd javac-jar/package-pra/src
 # 编译，并且将结果输出到out目录下（ps： 先输出out目录，然后再执行下面的编译脚本）
 $ javac -d ../out  *.java
 # 进入out目录
