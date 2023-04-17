@@ -29,5 +29,11 @@
       <!-- 因为父工程对spring-core进行了依赖管理，所以这里可以不用写version,它的版本跟父工程走 -->
       <!-- <version>4.0.0.RELEASE</version> -->
     </dependency>
+    <!-- 依赖 maven-module-2 -->
+    <dependency>
+      <groupId>com.allen.bai.maven</groupId>
+      <artifactId>maven-module-2</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

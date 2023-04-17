@@ -81,3 +81,45 @@
     </dependency>
   </dependencies>
 ```
+
+## 聚合工程的好处
+
+聚合工程的第一个好处是，父工程可以统一管理公共的依赖。第二个好处是在构建、安装等操作的时候，他会根据依赖关系按顺序进行出来
+
+聚合工程（前端的 monorepo 就借鉴了聚合工程的概念）有以下几点好处：
+
+1. 父工程统一管理公共的依赖
+2. 构建、安装等操作时，可以一个命令行搞定，不需要进入每个子工程操作。同时它还会依据依赖关系按顺序进行处理。比如 A 依赖了 B，A 和 B 都是 E 的子工程，那么安装的时候会先安装 B，然后再安装 A
+
+我们试验下上面提到的第二条好处。首先我们让 maven-module 依赖 maven-module-2，maven-module-2 依赖 maven-module-3 。
+
+```XML
+<!-- maven-module 的 pom.xml 内配置如下依赖 -->
+<dependency>
+  <groupId>com.allen.bai.maven</groupId>
+  <artifactId>maven-module-2</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
+```XML
+<!-- maven-module-2 的 pom.xml 内配置如下依赖 -->
+<dependency>
+  <groupId>com.allen.bai.maven</groupId>
+  <artifactId>maven-module-3</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
+回到 maven-parent 目录，运行`mvn clean install`，会发现它以下面这个顺序进行了安装：
+
+```
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] maven-parent
+[INFO] maven-module-3
+[INFO] maven-module-2
+[INFO] maven-module
+```
+
+注意：聚合工程的依赖不要配置成循环依赖
