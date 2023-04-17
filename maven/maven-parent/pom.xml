@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.allen.bai.maven</groupId>
+  <artifactId>maven-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <!-- 打包方式为 pom ，作为父工程去管理子工程-->
+  <packaging>pom</packaging>
+
+  <name>maven-parent</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- 创建我们自定义的属性标签 -->
+    <!-- 标签名：属性名 -->
+    <!-- 标签值：属性值 -->
+    <!-- 引用方式： ${allen.spring.version} -->
+    <allen.spring.version>4.0.0.RELEASE</allen.spring.version>
+  </properties>
+
+  <!-- 聚合配置 -->
+  <modules>  
+    <module>maven-module</module>
+    <module>maven-module-2</module>
+    <module>maven-module-3</module>
+  </modules>
+
+  <!-- 在父工程中统一管理依赖信息 -->
+  <!-- 注意：即使父工程配置了对依赖的管理，子工程还是需要自己的pom.xml内明确要使用的依赖 -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${allen.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${allen.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${allen.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-expression</artifactId>
+        <version>${allen.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${allen.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
